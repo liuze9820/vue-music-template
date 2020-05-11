@@ -17,7 +17,7 @@
 			<!-- 搜索歌曲-->
 			<div class="search_bar">
 				<input type="text" autocomplete="off" v-model="keywords" @keyup.enter="flag && seachMusic(keywords)" />
-				<button>上一首</button>
+				<button @click="prev">上一首</button>
 				<button @click='next'>下一首</button>
 			</div>
 
@@ -26,7 +26,7 @@
 				<!-- 所有歌曲列表 -->
 				<div class='song_wrapper'>
 					<ul class="song_list">
-						<li v-for="(item,index) in musicList" :key='item.id' @click="playMusic(item.id,index)" :class='{active:index===currentIndex}'>
+						<li v-for="(item,index) in musicList" :key='item.id ,index' @click="playMusic(item.id,index)" :class='{active:index===currentIndex}'>
 							<!-- 播放按钮 -->
 							<a href="javascript:;" ></a>
 							<!-- 歌曲名字 -->
